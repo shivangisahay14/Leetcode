@@ -1,0 +1,32 @@
+ int max=1;
+    int count=1;
+    if(s=="")
+        max=0;
+    else
+    {
+    for(int i=1;i<s.length();i++)
+    {
+       for(int j=i-1;j>=0;j--)
+       {
+          int h=j+1;
+          while(h!=i)
+          {
+              if(s[j]!=s[h])
+                  h++;
+              else
+                  break;
+          }
+          if(h==i && s[j] != s[i])
+              count++;
+          else
+          {
+              break;
+          }
+       }
+        if(max<count)
+            max=count;
+        count=1;
+    }
+    }
+    return max;
+}
