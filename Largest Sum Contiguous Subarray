@@ -1,0 +1,42 @@
+Method 1 Brute Force
+
+view sourceprint?
+int maxSum(int a[],int n)
+{
+  int i,j,k;
+  int sum,maxSum = 0;
+  for(i=0; i<n; i++)
+  {
+    for(j=i; j<n; j++)
+    {
+      sum = 0;
+      for(k=i ; k<j; k++)
+      {
+        sum = sum + a[k];
+      }
+      if(sum>maxSum)
+        maxSum = sum;
+    }
+   }
+   return maxSum;
+}
+
+Method 2 Quadratic
+
+int maxSum(int a[],int n )
+{
+    int i,j,sum,maxSum;
+    maxSum = 0;
+    for(i = 0;i<n;i++)
+    {
+        sum = 0;
+        for(j=i;j<n;j++)
+        {
+            sum = sum + a[j];
+            if(sum>maxSum)
+                maxSum = sum;
+        }
+    }
+    return maxSum;
+}
+Time Complexity O(n^2)
